@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Viktor Andreychyk – profil</title>
+  <meta name="description" content="Viktor Andreychyk, student aplikovanej informatiky na FEI STU. Backend v Jave a Kotline, cloud a DevOps, testovanie a kvalita kodu.">
+  <meta name="author" content="Viktor Andreychyk">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Viktor Andreychyk – profil">
+  <meta property="og:description" content="Student aplikovanej informatiky na FEI STU. Backend v Jave a Kotline, cloud a DevOps, testovanie a kvalita kodu.">
+  <meta property="og:image" content="img/og-cover.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="stylesheet" href="css/print.css?v=2" media="print">
+  <script>document.documentElement.dataset.js = "on";</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Preskočiť na obsah</a>
+
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="brand" href="index.html">
+        <svg class="monogram" viewBox="0 0 48 48" width="44" height="44" aria-hidden="true" focusable="false">
+          <!--draw VA-->
+          <rect class="monogram__plate" x="0" y="0" width="48" height="48" rx="11"></rect>
+          <path class="monogram__letters" d="M10 14 L16.5 33 L23 14"></path>
+          <path class="monogram__letters" d="M25 33 L31.5 14 L38 33"></path>
+          <path class="monogram__letters" d="M27.6 25.5 H35.4"></path>
+        </svg>
+        <span class="brand__text">
+          <span class="brand__name">Viktor Andreychyk</span>
+          <span class="brand__slogan">Pod ležiaci kameň voda netečie.</span>
+        </span>
+      </a>
+
+      <button class="icon-button nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="visually-hidden">Otvoriť menu</span>
+        <!--draw menu-->
+        <svg class="nav-toggle__open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+        <svg class="nav-toggle__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+          <path d="M6 6l12 12M18 6L6 18"></path>
+        </svg>
+      </button>
+    </div>
+
+
+
+    <!--connect bottom with function (aria-controls="site-nav")-->
+    <nav class="site-nav container" id="site-nav" aria-label="Hlavné menu">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="index.html" aria-current="page">Profil</a></li>
+        <li><a class="site-nav__link" href="pages/cv.html">Životopis</a></li>
+        <li><a class="site-nav__link" href="pages/workspace.html">Pracovné prostredie</a></li>
+        <li><a class="site-nav__link" href="pages/schedule.html">Kedy ma zastihnete</a></li>
+        <li><a class="site-nav__link" href="pages/map.html">Kde ma nájdete</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container" id="main">
+    <article class="profile">
+      <h1>Viktor Andreychyk</h1>
+
+      <img class="profile__photo" src="img/me.jpg" alt="Portrét Viktora Andreychyka" width="600" height="750" loading="lazy">
+
+      <div class="profile__text">
+        <p>
+          Som študent <strong>aplikovanej informatiky na FEI STU</strong> v Bratislave a píšem
+          backend v Jave a Kotline. Najradšej robím veci, ktoré niekde bežia a niekto ich používa:
+          službu napíšem, otestujem, zabalím do kontajnera a nasadím.
+        </p>
+        <p>
+          Pochádzam z Užhorodu na Ukrajine, na Slovensko som prišiel v roku 2023 kvôli štúdiu.
+          Rok a pol som robil na európskom projekte <strong>DEUSS</strong>, kde sme starý monolit
+          rozobrali na mikroslužby a testové pokrytie sme z tridsiatich percent dotiahli na
+          deväťdesiatosem. Popri škole si to držím v kondícii na vlastných projektoch – naposledy
+          na desktopovom nástroji na riadenie úloh a na sociálnej sieti so Spring Boot API.
+        </p>
+      </div>
+
+      <section class="section">
+        <h2>Tri veci, ktoré ma vystihujú</h2>
+        <ul class="key-things">
+          <li class="key-things__item">
+            <h3>Backend v Jave a Kotline</h3>
+            <p>
+              Spring Boot, REST API, Hibernate a vlastné Spring Boot startery. Doménu si
+              najprv rozkreslím, až potom píšem kód.
+            </p>
+          </li>
+          <li class="key-things__item">
+            <h3>Cloud a DevOps</h3>
+            <p>
+              Docker, Kubernetes a pipeline, ktorá zbuildí, otestuje a nasadí bez toho, aby som
+              do toho musel zasahovať rukami.
+            </p>
+          </li>
+          <li class="key-things__item">
+            <h3>Testovanie a kvalita kódu</h3>
+            <p>
+              JUnit 5, Testcontainers a E2E testy. Kód bez testov považujem za kód, ktorý
+              ešte nie je hotový.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <aside class="motto">
+        <p class="motto__quote">„Pod ležiaci kameň voda netečie.“</p>
+        <p class="motto__source">
+          Slovenské príslovie, ktoré doma poznáme v ukrajinskej verzii.
+          Drží ma pri tom, aby som veci skúšal namiesto toho, aby som o nich len čítal.
+        </p>
+      </aside>
+
+      <p class="section">
+        <a class="button button--primary" href="pages/cv.html">Pozrieť si životopis</a>
+        <a class="button" href="pages/schedule.html">Kedy ma zastihnete</a>
+      </p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <section>
+        <h2>Kontakt</h2>
+        <address>
+          Viktor Andreychyk<br>
+          <a href="mailto:xandreychyk@stuba.sk">xandreychyk@stuba.sk</a><br>
+          <a href="tel:+421902345678">+421 902 345 678</a><br>
+          ŠD Mladosť, Staré grunty 53, 841 04 Bratislava
+        </address>
+      </section>
+      <section>
+        <h2>Odkazy</h2>
+        <ul>
+          <li><a href="https://github.com/viktorandreychuk">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/viktor-andreychyk/">LinkedIn</a></li>
+          <li><a href="https://www.fei.stuba.sk/">FEI STU</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Zdroje</h2>
+        <ul>
+          <li class="muted">Portrét (ilustrácia) a fotografia stola: vlastná tvorba.</li>
+          <li><a href="https://www.openstreetmap.org/copyright">Mapové podklady © OpenStreetMap</a></li>
+          <li><a href="https://leafletjs.com/">Mapová knižnica Leaflet</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>O stránke</h2>
+        <p class="muted">
+          Osobná vizitka, zadanie č. 1 z predmetu Webové technológie 1.<br>
+          © 2026 Viktor Andreychyk
+        </p>
+      </section>
+    </div>
+  </footer>
+
+  <script src="js/script.js?v=2" defer></script>
+</body>
+</html>

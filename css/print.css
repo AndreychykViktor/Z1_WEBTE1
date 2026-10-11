@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+/* =========================================================================
+   Print stylesheet - the CV has to fit on a single sheet of paper,
+   without navigation and without decorative backgrounds.
+   All concrete color values are declared in :root only.
+   ========================================================================= */
+
+@media print {
+  :root {
+    /* ink-friendly palette, reused by every rule below */
+    --color-text: #000000;
+    --color-text-muted: #333333;
+    --color-bg: #ffffff;
+    --color-surface: #ffffff;
+    --color-surface-alt: #ffffff;
+    --color-brand: #000000;
+    --color-brand-strong: #000000;
+    --color-brand-soft: #ffffff;
+    --color-accent: #000000;
+    --color-accent-soft: #ffffff;
+    --color-border: #666666;
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+
+    /* tighter rhythm so everything fits on one page */
+    --space-3xs: 0.1rem;
+    --space-2xs: 0.2rem;
+    --space-xs: 0.3rem;
+    --space-sm: 0.45rem;
+    --space-md: 0.6rem;
+    --space-lg: 0.8rem;
+    --space-xl: 1rem;
+    --step-xs: 8pt;
+    --step-0: 9.5pt;
+    --step-1: 11pt;
+    --step-2: 13pt;
+    --step-3: 16pt;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm;
+  }
+
+  html,
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-size: var(--step-0);
+    line-height: 1.35;
+  }
+
+  /* chrome that does not belong on paper */
+  .site-header,
+  .site-nav,
+  .site-footer,
+  .skip-link,
+  .icon-button,
+  .print-hint,
+  .page-intro p {
+    display: none;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: var(--step-2);
+    margin-bottom: var(--space-2xs);
+  }
+
+  h2 {
+    font-size: var(--step-1);
+    margin-bottom: var(--space-2xs);
+  }
+
+  h3 {
+    font-size: var(--step-0);
+    margin-bottom: 0;
+  }
+
+  /* two columns, no decoration, no shadows */
+  .cv {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    gap: var(--space-md);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  .cv__aside,
+  .cv__main {
+    padding: 0;
+    background-color: var(--color-bg);
+  }
+
+  .cv__aside {
+    border-right: 1px solid var(--color-border);
+    padding-right: var(--space-md);
+  }
+
+  .cv__photo {
+    max-width: 30mm;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .timeline {
+    border-left: 1px solid var(--color-border);
+  }
+
+  .timeline > li::before {
+    background-color: var(--color-text);
+  }
+
+  .level,
+  .tag {
+    padding: 0;
+    border-radius: 0;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  .level::before {
+    content: "(";
+  }
+
+  .level::after {
+    content: ")";
+  }
+
+  .note,
+  .motto,
+  .panel-bar,
+  .result {
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg);
+    box-shadow: none;
+  }
+
+  /* keep blocks from being split across pages */
+  .cv,
+  .timeline > li,
+  .skill-table tr {
+    break-inside: avoid;
+  }
+
+  a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+}

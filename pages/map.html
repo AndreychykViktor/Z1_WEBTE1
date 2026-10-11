@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kde ma nájdete – mapa</title>
+  <meta name="description" content="Interaktivna mapa s fakultou FEI STU a mojim bydliskom v Bratislave. Vzdialenost medzi nimi vzdusnou ciarou.">
+  <meta name="author" content="Viktor Andreychyk">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Kde ma nájdete – mapa">
+  <meta property="og:description" content="Fakulta, bydlisko a vzdialenost medzi nimi na interaktivnej mape.">
+  <meta property="og:image" content="../img/og-cover.png">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+  <link rel="stylesheet" href="../vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="../css/styles.css?v=2">
+  <link rel="stylesheet" href="../css/print.css?v=2" media="print">
+  <script>document.documentElement.dataset.js = "on";</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Preskočiť na obsah</a>
+
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="brand" href="../index.html">
+        <svg class="monogram" viewBox="0 0 48 48" width="44" height="44" aria-hidden="true" focusable="false">
+          <rect class="monogram__plate" x="0" y="0" width="48" height="48" rx="11"></rect>
+          <path class="monogram__letters" d="M10 14 L16.5 33 L23 14"></path>
+          <path class="monogram__letters" d="M25 33 L31.5 14 L38 33"></path>
+          <path class="monogram__letters" d="M27.6 25.5 H35.4"></path>
+        </svg>
+        <span class="brand__text">
+          <span class="brand__name">Viktor Andreychyk</span>
+          <span class="brand__slogan">Pod ležiaci kameň voda netečie.</span>
+        </span>
+      </a>
+
+      <button class="icon-button nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="visually-hidden">Otvoriť menu</span>
+        <svg class="nav-toggle__open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+        <svg class="nav-toggle__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+          <path d="M6 6l12 12M18 6L6 18"></path>
+        </svg>
+      </button>
+    </div>
+
+    <nav class="site-nav container" id="site-nav" aria-label="Hlavné menu">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="../index.html">Profil</a></li>
+        <li><a class="site-nav__link" href="cv.html">Životopis</a></li>
+        <li><a class="site-nav__link" href="workspace.html">Pracovné prostredie</a></li>
+        <li><a class="site-nav__link" href="schedule.html">Kedy ma zastihnete</a></li>
+        <li><a class="site-nav__link" href="map.html" aria-current="page">Kde ma nájdete</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container" id="main">
+    <div class="page-intro">
+      <h1>Kde ma nájdete</h1>
+      <p>
+        Na mape sú dve miesta: fakulta, na ktorú chodím, a internát Mladosť, kde bývam.
+        Stránka spočíta, ako ďaleko sú od seba vzdušnou čiarou.
+      </p>
+    </div>
+
+    <noscript>
+      <p class="note">
+        Mapa potrebuje zapnutý JavaScript. Adresy sú aj tak jednoznačné:
+        FEI STU, Ilkovičova 3, 812 19 Bratislava a Študentský domov Mladosť,
+        Staré grunty 53, 841 04 Bratislava.
+        Vzdušná vzdialenosť medzi nimi je približne 950 metrov, pešo to je asi štvrť hodiny.
+      </p>
+    </noscript>
+
+    <section class="section">
+      <h2>Mapa</h2>
+      <div class="map-layout">
+        <div class="map" id="map"></div>
+
+        <div class="map-panel">
+          <h3>Vzdialenosť</h3>
+          <p class="result">
+            <span class="result__value" id="distance-value">–</span>
+            vzdušnou čiarou medzi fakultou a internátom.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Dve stále miesta</h2>
+      <ul>
+        <li>
+          <strong>Fakulta elektrotechniky a informatiky STU</strong> – Ilkovičova 3,
+          812 19 Bratislava. Sem chodím na prednášky a cvičenia podľa
+          <a href="schedule.html">rozvrhu</a>.
+        </li>
+        <li>
+          <strong>Bydlisko – Študentský domov Mladosť, Staré grunty 53, 841 04 Bratislava</strong>.
+          Odtiaľto chodím na fakultu pešo, je to necelý kilometer. Bod je umiestnený na areál
+          internátu, nie na konkrétnu izbu.
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <section>
+        <h2>Kontakt</h2>
+        <address>
+          Viktor Andreychyk<br>
+          <a href="mailto:xandreychyk@stuba.sk">xandreychyk@stuba.sk</a><br>
+          <a href="tel:+421902345678">+421 902 345 678</a><br>
+          ŠD Mladosť, Staré grunty 53, 841 04 Bratislava
+        </address>
+      </section>
+      <section>
+        <h2>Odkazy</h2>
+        <ul>
+          <li><a href="https://github.com/AndreychykViktor">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/viktor-andreychyk-0819a1397/?isSelfProfile=true">LinkedIn</a></li>
+          <li><a href="https://www.fei.stuba.sk/">FEI STU</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Zdroje</h2>
+        <ul>
+          <li class="muted">Portrét (ilustrácia) a fotografia stola: vlastná tvorba.</li>
+          <li><a href="https://www.openstreetmap.org/copyright">Mapové podklady © OpenStreetMap</a></li>
+          <li><a href="https://leafletjs.com/">Mapová knižnica Leaflet</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>O stránke</h2>
+        <p class="muted">
+          Osobná vizitka, zadanie č. 1 z predmetu Webové technológie 1.<br>
+          © 2026 Viktor Andreychyk
+        </p>
+      </section>
+    </div>
+  </footer>
+
+  <script src="../vendor/leaflet/leaflet.js" defer></script>
+  <script src="../js/script.js?v=2" defer></script>
+</body>
+</html>
